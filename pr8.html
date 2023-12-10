@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #59bfff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        header a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #search-container {
+            text-align: right;
+        }
+        #search-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #search-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #000000;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #decorative-box {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        #search-results {
+            display: none;
+            margin-top: 20px;
+        }
+        #results-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #not-found {
+            display: none;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div id="search-container">
+                <input type="text" id="search-box" placeholder="Search...">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="decorative-box">
+            <div id="predefined-list">
+                <h2>Predefined List</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                    <li>C++</li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+
+            <div id="search-results">
+                <h2>Search Results</h2>
+                <ul id="results-list"></ul>
+                <p id="not-found">No elements found.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const searchBox = document.getElementById('search-box');
+        const searchButton = document.getElementById('search-button');
+        const predefinedList = document.getElementById('predefined-list');
+        const searchResults = document.getElementById('search-results');
+        const resultsList = document.getElementById('results-list');
+        const notFound = document.getElementById('not-found');
+
+        searchButton.addEventListener('click', performSearch);
+
+        function performSearch() {
+            const query = searchBox.value.toLowerCase();
+            resultsList.innerHTML = '';
+
+            if (query === '') {
+                predefinedList.style.display = 'block';
+                searchResults.style.display = 'none';
+                notFound.style.display = 'none';
+            } else {
+                predefinedList.style.display = 'none';
+                searchResults.style.display = 'block';
+
+                const keywords = ["Python", "JavaScript", "Java", "C++", "HTML"];
+                let found = false;
+
+                for (const keyword of keywords) {
+                    if (keyword.toLowerCase().includes(query)) {
+                        const li = document.createElement('li');
+                        li.textContent = keyword;
+                        resultsList.appendChild(li);
+                        found = true;
+                    }
+                }
+
+                if (!found) {
+                    notFound.style.display = 'block';
+                } else {
+                    notFound.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

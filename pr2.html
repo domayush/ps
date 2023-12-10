@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #2980b9, #6dd5fa); /* Gradient background */
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .timetable {
+            width: 90%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timetable th, .timetable td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .timetable th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .timetable td {
+            background-color: #f9f9f9;
+        }
+
+        .timetable tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        .timetable caption {
+            font-size: 1.5em;
+            padding: 10px;
+        }
+
+        .year {
+            text-align: center;
+            font-size: 1.2em;
+            color: #4CAF50;
+            margin-top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #2980b9, #6dd5fa); /* Gradient background */
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        span {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3em;
+            background-image: linear-gradient(gold, gold);
+            background-size: 100% 10px;
+            background-repeat: no-repeat;
+            background-position: 100% 0%;
+            transition: background-size .7s, background-position .5s ease-in-out;
+        }
+
+        span:hover {
+            background-size: 100% 100%;
+            background-position: 0% 100%;
+            transition: background-position .7s, background-size .5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <table class="timetable">
+        <span> Computer Engineering College Timetable </span>
+        <div class="year">2023</div>
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>08:00 AM</td>
+            <td>Math</td>
+            <td>Physics</td>
+            <td>Computer Architecture</td>
+            <td>Lab</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>10:00 AM</td>
+            <td>Programming</td>
+            <td>Electronics</td>
+            <td>Networking</td>
+            <td>Lab</td>
+            <td>History</td>
+        </tr>
+        <tr>
+            <td>12:00 PM</td>
+            <td colspan="5">Lunch</td>
+        </tr>
+        <tr>
+            <td>01:00 PM</td>
+            <td>Data Structures</td>
+            <td>Algorithms</td>
+            <td>Software Engineering</td>
+            <td>Lab</td>
+            <td>Ethics</td>
+        </tr>
+        <!-- Additional Subjects -->
+        <tr>
+            <td>03:00 PM</td>
+            <td>Operating Systems</td>
+            <td>Web Development</td>
+            <td>Database Management</td>
+            <td>Lab</td>
+            <td>Robotics</td>
+        </tr>
+        <tr>
+            <td>05:00 PM</td>
+            <td>Networking Lab</td>
+            <td>AI and Machine Learning</td>
+            <td>Ethical Hacking</td>
+            <td>Lab</td>
+            <td>Project Management</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #007BFF, #00A5E0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #result {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div id="result">
+    <h1>String and Number Manipulation</h1>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+    <button onclick="findLeftMostVowelPosition()">Find Left-Most Vowel Position</button>
+
+    <br><br>
+
+    <label for="inputNumber">Enter a number:</label>
+    <input type="number" id="inputNumber">
+    <button onclick="reverseNumberDigits()">Reverse Number Digits</button>
+
+    <p id="output"></p>
+
+    <script>
+     
+      function findLeftMostVowelPosition() {
+        const inputString = document.getElementById('inputString').value;
+        const vowels = "aeiouAEIOU";
+        for (let i = 0; i < inputString.length; i++) {
+          if (vowels.includes(inputString[i])) {
+            document.getElementById('output').textContent = "The left-most vowel is at position: " + i;
+            return;
+          }
+        }
+        document.getElementById('output').textContent = "No vowel found in the string.";
+      }
+
+      function reverseNumberDigits() {
+        const inputNumber = document.getElementById('inputNumber').value;
+        if (isNaN(inputNumber)) {
+          document.getElementById('output').textContent = "Invalid input. Please provide a number.";
+          return;
+        }
+        const reversedNumber = parseInt(inputNumber.toString().split('').reverse().join(''));
+        document.getElementById('output').textContent = "The reversed number is: " + reversedNumber;
+      }
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <title>Registration Form</title> 
+    <style> 
+        form{ 
+            background-color: rgb(238, 207, 199); 
+            border: solid; 
+            width: 17.5cm; 
+            padding-left: 50px; 
+        } 
+        legend{ 
+            background-color: rgb(230, 191, 230); 
+            border-radius: 7px; 
+            padding: 1px 10px; 
+        } 
+        fieldset { 
+            width: 15cm; 
+            background-color: rgb(194, 222, 233); 
+            border-radius: 7px; 
+            border: solid; 
+        } 
+        input[type=submit], input[type=reset]{ 
+            background-color: #343235; 
+            border-radius: 5px; 
+            color: white; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <form> 
+        <h1>Registration Form</h1> 
+        <fieldset> 
+            <legend> 
+                <h2>Personal Details</h2> 
+            </legend> 
+            <label for="name">Name: </label> 
+            <input type="text" name="name" id="name" placeholder="Enter 
+             in capital" required> 
+            <br><br> 
+            Gender:  
+            <input type="radio" name="gender" id="male" required> 
+            <label for="male">Male</label> 
+            <input type="radio" name="gender" id="female" required> 
+            <label for="female">Female</label> 
+            <p> 
+                Address:  
+                <br> 
+                <textarea name="address" id="address" cols="50"  
+                 rows="5"></textarea> 
+            </p> 
+            <label for="email">Email: </label> 
+            <input type="email" name="email" id="email" required> 
+            <br><br> 
+           <p> 
+                Category: 
+                <input type="radio" name="cat" id="Open"> <label  
+                 for="Open">Open</label> 
+                <input type="radio" name="cat" id="EBC"> <label 
+                 for="EBC">EBC</label> 
+                <input type="radio" name="cat" id="OBC"> <label  
+                 for="OBC">OBC/SC/ST</label> 
+            </p> 
+        </fieldset> 
+        <br> 
+        <fieldset> 
+            <legend> 
+                <h2>Year of Admission Details</h2> 
+            </legend> 
+            <label for="branch">Branch:</label> 
+            <select name="branch" id="branch"> 
+                <option value="">--Select your branch--</option> 
+                <option value="CSE">Computer Science Engineering</option> 
+                <option value="ETC">Electronics and Telecommunication 
+                 Engineering</option> 
+                <option value="Ele">Electrical Engineering</option> 
+                <option value="Mec">Mechanical Engineering</option> 
+                <option value="Civil">Civil Engineering</option> 
+            </select> 
+            <p> 
+                Pursuing Semester: 
+                <input type="radio" id="3" name="sem"> <label  
+                 for="3">3<sup>rd</sup> sem</label> 
+                <input type="radio" id="5" name="sem"> <label  
+                 for="5">5<sup>th</sup> sem</label> 
+                <input type="radio" id="7" name="sem"> <label  
+                 for="7">7<sup>rd</sup> sem</label> 
+            </p> 
+            <label for="marksheet">Last Semester Marksheet:</label> 
+            <input type="file" id="marksheet"> 
+            <br><br> 
+            <label for="fee">Enter your fees</label><input type="text"  
+             id="fee"> 
+        </fieldset> 
+        <br> 
+        <fieldset> 
+            <legend> 
+                <h2>Payment Information</h2> 
+            </legend> 
+            <label for="card_type">Card Type:</label>  
+            <select name="card_type" id="card_type" required> 
+                <option value="">--select a card type--</option> 
+                <option value="visa">Visa</option> 
+                <option value="rupay">Rupay</option> 
+                <option value="mastercard">Master card</option> 
+            </select> 
+            <br><br> 
+            <label for="card_number">Card Number:</label> 
+            <input type="text" name="card_number" id="card_number" 
+             placeholder="0123 4567 8910" required> 
+            <br><br> 
+            <label for="exp_date">Expiry Date:</label> 
+            <input type="date" name="exp_date" id="exp_date" required> 
+            <br><br> 
+            <label for="">CVV:</label> 
+            <input type="password" name="cvv" id="cvv" size="3" required> 
+        </fieldset> 
+        <br> 
+        <input type="submit" value="Pay Now"> 
+        <input type="reset"> 
+    </form> 
+</body> 
+</html>
